@@ -1,0 +1,22 @@
+top: 3cm
+bottom: 3cm
+left: 3cm
+right: 4cm
+bib-style: authortitle-ibid
+bib-autocite: footnote
+flush-left: true
+main-font: Liberation Mono
+font-size: 12pt
+paper-format: a4paper
+lang: ngerman
+pagestyle: school
+titlepage: true
+institute:
+  - Gymnasium Neu Wulmstorf
+  - Ernst-Moritz-Arndt-Str. 20
+  - 21629 Neu Wulmstorf
+include-before:
+  - \pagestyle{plain}
+  - \tableofcontents
+  - \clearpage
+  - \pagestyle{school}

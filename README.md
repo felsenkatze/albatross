@@ -1,6 +1,6 @@
 # Albatross
 
-A simple pandoc template for use with markdown documents inspired by [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) but built from scratch. The default options are ones that I think are good for documents.
+A simple pandoc template for use with markdown documents inspired by [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) but built from scratch. The default options are ones that I think are good for documents, but the requirements of my school can easily be fulfilled by supplying the additional metadata file [school.yaml](school.yaml). The current status of school requirement fulfillment can be found in [ROADMAP.school.md](ROADMAP.school.md).
 
 # Usage
 
@@ -11,6 +11,12 @@ pandoc -f markdown input.md -t latex --template albatross.tex -o output.pdf --pd
 ```
 
 Instead of `xelatex`, `lualatex` can be used. But it is not possible to use `pdflatex` because it does not support custom fonts.
+
+For use with school requirements, call
+
+```sh
+pandoc -f markdown input.md -t latex --template albatross.tex -o output.pdf --pdf-engine=xelatex --metadata-file school.yaml
+```
 
 # Custom Vars
 

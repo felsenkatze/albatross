@@ -1,0 +1,48 @@
+# Roadmap
+
+Roadmap for school requirements
+
+- [x] margins
+    - top: 3cm
+    - bottom: 3cm
+    - left: 3cm
+    - right: 4cm -> option for cusomization based on teacher
+- [x] onehalfspacing of normal text, footnotes and blockquotes singlespacing
+- [x] flush left (maybe justified -> add option for this)
+- [x] font Courier New or equal
+    - I chose "Liberation Mono" because it is an open one
+- [] font size
+    - [x] normal text 12pt
+    - [] footnotes, blockquotes, etc. 10pt
+    - [] headings 1pt to 2pt bigger than normal text
+- [x] titlepage
+    - [x] title
+    - [x] type of work
+    - [x] name
+    - [x] subject
+    - [x] teacher
+    - [x] location
+    - [x] date
+- [] table of contents
+    - [x] no page number
+    - [] numbering following this cheme:
+        - 1.
+        - 2.
+            - 2.1
+            - 2.2
+        - 3.
+- [] citations
+    - [] beginning and end of quote with double quotation marks
+    - [] quote inside quote with single quotes
+    - [x] citation in footnote by default
+        - [x] numerical footnotes
+        - [x] contains => authortitle-ibid
+            - author
+            - short title
+            - (year)
+            - page
+- [] bibliography
+    - [x] sorted name, year (title)
+    - option to divide bibliography based on resource type (book, website, etc.)
+    - [] delimiter: comma
+- [] printed webpages if used as sources
