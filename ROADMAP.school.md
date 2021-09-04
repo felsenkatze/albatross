@@ -13,7 +13,7 @@ Roadmap for school requirements
     - I chose "Liberation Mono" because it is an open one
 - [] font size
     - [x] normal text 12pt
-    - [] footnotes, blockquotes, etc. 10pt
+    - [x] footnotes, blockquotes, etc. 10pt
     - [] headings 1pt to 2pt bigger than normal text
 - [x] titlepage
     - [x] title
