@@ -110,7 +110,7 @@ $endif$
 }
 
 % style for school requirements
-\fancypagestyle{plain}{
+\fancypagestyle{school}{
     \fancyhf{}
     \cfoot{\thepage}
     \renewcommand{\headrulewidth}{0pt}
@@ -142,6 +142,37 @@ $endfor$
 \begin{document}
 
 \onehalfspacing % set line spacing 1.5
+
+$if(titlepage)$
+\pagestyle{plain}
+\vspace*{2cm}
+
+\begin{center}
+  {\huge $title$}\\[1cm]
+  {\LARGE $subtitle$}\\[5cm]
+\end{center}
+
+\vspace*{2cm}
+
+\begin{tabular}{p{3.5cm}|p{0.1cm} p{10cm}l}
+  \textsc{Name:}                   &  & \textsc{$author$}   \\
+  $if(subject)$\textsc{Fach:}      &  & \textsc{$subject$}  \\ $endif$
+  $if(course)$\textsc{Kurs:}       &  & \textsc{$course$}   \\ $endif$
+  $if(semester)$\textsc{Semester:} &  & \textsc{$semester$} \\ $endif$
+  $if(email)$\textsc{E-Mail:}      &  & \textsc{$email$}    \\ $endif$
+  $if(teacher)$\textsc{Lehrkraft:} &  & \textsc{$teacher$}  \\ $endif$
+  $if(tutor)$\textsc{TutorIn:}     &  & \textsc{$tutor$}    \\ $endif$
+  $if(date)$\textsc{Abgabedatum:}  &  & \textsc{$date$}     \\ $endif$
+\end{tabular}
+
+\vspace*{4cm}
+
+\begin{center}
+  $for(institute)$$institute$ \\$endfor$
+\end{center}
+\clearpage
+\pagestyle{$if(pagestyle)$$pagestyle$$else$homework$endif$}
+$endif$
 
 $body$
 

@@ -42,3 +42,23 @@ Instead of `xelatex`, `lualatex` can be used. But it is not possible to use `pdf
 | --------------- | ---------------------------------- | ---------------------------------- |
 | caption-options | options for cation package         | define options for caption package |
 | pagestyle       | pagestyle name defined in preamble | set the default pagestyle          |
+
+Information on optional titlepage:
+
+| var       | values           | purpose                          |
+| --------- | ---------------- | -------------------------------- |
+| titlepage | true, false      | whether to print a titlepage     |
+| subject   | string           | display the school subject       |
+| course    | string           | specific school course           |
+| semester  | string, integer  | semester of school               |
+| email     | string           | authors email                    |
+| teacher   | string           | teacher who gives marks for work |
+| tutor     | string           | personal tutor                   |
+| date      | string           | date of last document edit       |
+| institute | array of strings | print the location of school     |
+
+# Limitations
+
+- titlepage table entries only in german
+    - should be easy to change
+    - if you know how to add different language support, create a pull request or email me
