@@ -26,8 +26,27 @@
 % load graphicx for image processing
 \usepackage{graphicx}
 
+% load color used for coloring
+\usepackage{color}
+
+% load url to format urls
+\usepackage{url}
+
+\usepackage[ % load hyperref for links in the generated pdf
+   colorlinks, % links in color with no border
+   linkcolor=black, % internal references
+   filecolor=black, % external references
+   citecolor=black, % citations
+   urlcolor =black, % urls
+]{hyperref}
+\hypersetup{$if(author)$pdfauthor=$author$,$endif$$if(title)$pdftitle=$title$,$endif$$if(subject)$pdfsubject=$subject$,$endif$
+}
+
 % load geometry for cusomization of page and set margins
 \usepackage[top=$if(top)$$top$$else$2.5cm$endif$,left=$if(left)$$left$$else$2.5cm$endif$,right=$if(right)$$right$$else$2.5cm$endif$,bottom=$if(bottom)$$bottom$$else$2.5cm$endif$, $if(includefoot)$includefoot=$includefoot$,$endif$$if(includehead)$includehead=$includehead$,$endif$]{geometry}
+
+% load siunitx for unit formating
+\usepackage{siunitx}
 
 $if(bibliography)$
 \usepackage[
