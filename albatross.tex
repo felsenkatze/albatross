@@ -85,6 +85,40 @@ $endif$
 % load subcaption to be able to use subfigures, subtables, etc
 \usepackage{subcaption}
 
+% load fancyhdr to format header and footer
+\usepackage{fancyhdr}
+
+% define style for simple pages without any header and footer
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% style for homework, my personal one
+\fancypagestyle{homework}{
+    \fancyhead{}
+    \fancyfoot{}
+	\lhead{$if(header-left)$$header-left$$else$\leftmark$endif$}
+	\chead{$if(header-center)$$header-center$$else$\rightmark$endif$}
+	\rhead{$if(header-right)$$header-right$$else$$date$$endif$}
+	\lfoot{$if(footer-left)$$footer-left$$else$$for(author)$$author$$sep$, $endfor$$endif$}
+	\cfoot{$if(footer-center)$$footer-center$$else$$for(institute)$$institute$ \\$endfor$$endif$}
+	\rfoot{$if(footer-right)$$footer-right$$else$\thepage$endif$}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}
+
+% style for school requirements
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \cfoot{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\pagestyle{$if(pagestyle)$$pagestyle$$else$homework$endif$}
+
 $if(flush-left)$
 % load ragged2e for customization of text alignment
 \usepackage[document]{ragged2e}

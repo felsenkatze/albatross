@@ -37,3 +37,8 @@ Instead of `xelatex`, `lualatex` can be used. But it is not possible to use `pdf
 | var              | values                                     | purpose                                  |
 | ---------------- | ------------------------------------------ | ---------------------------------------- |
 | preamble-include | latex statements to be put in the preamble | include exotic packages, or other things |
+
+| var             | values                             | purpose                            |
+| --------------- | ---------------------------------- | ---------------------------------- |
+| caption-options | options for cation package         | define options for caption package |
+| pagestyle       | pagestyle name defined in preamble | set the default pagestyle          |
