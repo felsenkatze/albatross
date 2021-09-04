@@ -122,13 +122,21 @@ $endif$
 
 \pagestyle{$if(pagestyle)$$pagestyle$$else$homework$endif$}
 
+% load package to customize spacing
+\usepackage{setspace}
+
+% load footmisc to customize footnotes
+% bottom sets the footnote to the real bottom of the page, not the end of the text
+% hang indents the footnotetext enough so that it is not continued under the footnotenumber
+% set multiple to be able to distungish between several footnotes at same position (instead of ^1213, it is ^12,13)
+\usepackage[bottom, hang, multiple]{footmisc}
+% set spacing in footnotes to single
+\renewcommand{\footnotelayout}{\setstretch{1}}
+
 $if(flush-left)$
 % load ragged2e for customization of text alignment
 \usepackage[document]{ragged2e}
 $endif$
-
-% load package to customize spacing
-\usepackage{setspace}
 
 % load blindtext for testing purposes
 \usepackage{blindtext}
@@ -176,6 +184,10 @@ $if(titlepage)$
 \clearpage
 \pagestyle{$if(pagestyle)$$pagestyle$$else$homework$endif$}
 $endif$
+
+$for(include-before)$
+$include-before$
+$endfor$
 
 $body$
 

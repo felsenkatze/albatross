@@ -34,9 +34,10 @@ Instead of `xelatex`, `lualatex` can be used. But it is not possible to use `pdf
 | ---- | ----------------------- | ----------------------------------- |
 | lang | babel languages (array) | languages that babel should support |
 
-| var              | values                                     | purpose                                  |
-| ---------------- | ------------------------------------------ | ---------------------------------------- |
-| preamble-include | latex statements to be put in the preamble | include exotic packages, or other things |
+| var              | values                                     | purpose                                            |
+| ---------------- | ------------------------------------------ | -------------------------------------------------- |
+| preamble-include | latex statements to be put in the preamble | include exotic packages, or other things           |
+| include-before   | text, latex, whatever                      | insert text before the document inserted by pandoc |
 
 | var             | values                             | purpose                            |
 | --------------- | ---------------------------------- | ---------------------------------- |
@@ -60,5 +61,5 @@ Information on optional titlepage:
 # Limitations
 
 - titlepage table entries only in german
-    - should be easy to change
-    - if you know how to add different language support, create a pull request or email me
+  - should be easy to change
+  - if you know how to add different language support, create a pull request or email me
