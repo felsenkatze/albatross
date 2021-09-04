@@ -54,7 +54,7 @@
 $if(bibliography)$
 \usepackage[
 backend=biber, 
-style=$if(bibl-style)$$bib-style$$else$authoryear-ibid$endif$,
+style=$if(bib-style)$$bib-style$$else$authoryear-ibid$endif$,
 sorting=nyt,
 clearlang=true,
 backref=$if(backref)$true$else$false$endif$,
