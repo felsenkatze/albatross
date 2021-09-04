@@ -71,6 +71,20 @@ date=$if(bib-year)$$bib-year$$else$year$endif$,
 \addbibresource{$bibliography$}
 $endif$
 
+% load titlesec to format the section titles
+\usepackage{titlesec}
+\titleformat{\section} % format sections
+  {\large\scshape}{\thesection}{0.5cm}{}
+\titleformat{\subsection} % format subsections
+  {\large\scshape}{\thesubsection}{0.5cm}{}
+\titleformat{\subsubsection} % format subsubsections
+  {\large\scshape}{\thesubsubsection}{0.5cm}{}
+
+% load caption to format captions of figures, tables, etc
+\usepackage[$for(caption-options)$$caption-options$$endfor$]{caption}
+% load subcaption to be able to use subfigures, subtables, etc
+\usepackage{subcaption}
+
 $if(flush-left)$
 % load ragged2e for customization of text alignment
 \usepackage[document]{ragged2e}
