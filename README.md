@@ -64,6 +64,10 @@ Information on optional titlepage:
 | date      | string           | date of last document edit       |
 | institute | array of strings | print the location of school     |
 
+| var               | values      | purpose                                                      |
+| ----------------- | ----------- | ------------------------------------------------------------ |
+| dot-after-section | true, false | whether to print a dot after the section number, e.g. 1., I. |
+
 # Limitations
 
 - titlepage table entries only in german

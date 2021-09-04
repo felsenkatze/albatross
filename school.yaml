@@ -20,3 +20,4 @@ include-before:
   - \tableofcontents
   - \clearpage
   - \pagestyle{school}
+dot-after-section: true

@@ -83,6 +83,11 @@ $endif$
 \titleformat{\subsubsection} % format subsubsections
   {\large\scshape}{\thesubsubsection}{0.5cm}{}
 
+$if(dot-after-section)$
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}
+$endif$
+
 % load caption to format captions of figures, tables, etc
 \usepackage[$for(caption-options)$$caption-options$$endfor$]{caption}
 % load subcaption to be able to use subfigures, subtables, etc

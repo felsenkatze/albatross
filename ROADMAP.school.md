@@ -14,7 +14,7 @@ Roadmap for school requirements
 - [] font size
     - [x] normal text 12pt
     - [x] footnotes, blockquotes, etc. 10pt
-    - [] headings 1pt to 2pt bigger than normal text
+    - [] headings 1pt to 2pt bigger than normal text and subheadings
 - [x] titlepage
     - [x] title
     - [x] type of work
@@ -23,9 +23,9 @@ Roadmap for school requirements
     - [x] teacher
     - [x] location
     - [x] date
-- [] table of contents
+- [x] table of contents
     - [x] no page number
-    - [] numbering following this cheme:
+    - [x] numbering following this cheme:
         - 1.
         - 2.
             - 2.1
