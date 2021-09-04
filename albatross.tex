@@ -144,6 +144,10 @@ $endif$
 % load blindtext for testing purposes
 \usepackage{blindtext}
 
+% set lenght used by pandoc when converting lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % include optional statements from yaml in the preamble
 $for(preamble-include)$
 $preamble-include$
