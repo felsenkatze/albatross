@@ -1,0 +1,81 @@
+% Copyright 2021 felsenkatze
+% 
+% Licensed under the Apache License, Version 2.0 (the "License");
+% you may not use this file except in compliance with the License.
+% You may obtain a copy of the License at
+% 
+%     http://www.apache.org/licenses/LICENSE-2.0
+% 
+% Unless required by applicable law or agreed to in writing, software
+% distributed under the License is distributed on an "AS IS" BASIS,
+% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+% See the License for the specific language governing permissions and
+% limitations under the License.
+
+% A4 paper with 12pt font
+\documentclass[$if(font-size)$$font-size$$else$12pt$endif$, $if(paper-format)$$paper-format$$else$a4paper$endif$]{article}
+
+% load fontspec for font management
+\usepackage{fontspec}
+% set default font -> font must be installed on the system
+\setmainfont{$if(main-font)$$main-font$$else$Liberation Serif$endif$}
+
+% load babel for language management
+\usepackage[$if(lang)$$lang$$endif$]{babel}
+
+% load graphicx for image processing
+\usepackage{graphicx}
+
+% load geometry for cusomization of page and set margins
+\usepackage[top=$if(top)$$top$$else$2.5cm$endif$,left=$if(left)$$left$$else$2.5cm$endif$,right=$if(right)$$right$$else$2.5cm$endif$,bottom=$if(bottom)$$bottom$$else$2.5cm$endif$, $if(includefoot)$includefoot=$includefoot$,$endif$$if(includehead)$includehead=$includehead$,$endif$]{geometry}
+
+$if(bibliography)$
+\usepackage[
+backend=biber, 
+style=$if(bibl-style)$$bib-style$$else$authoryear-ibid$endif$,
+sorting=nyt,
+clearlang=true,
+backref=$if(backref)$true$else$false$endif$,
+abbreviate=true,
+doi=true,
+url=true,
+isbn=true,
+useauthor=true,
+usetranslator=true,
+maxcitenames=$if(bib-maxcitenames)$$bib-maxcitenames$$else$1$endif$,
+maxbibnames=$if(bib-maxbibnames)$$bib-maxbibnames$$else$100$endif$,
+autocite=$if(bib-autocite)$$bib-autocite$$else$plain$endif$,
+block=$if(bib-block)$$bib-block$$else$none$endif$,
+timezones=$if(bib-timezone)$true$else$false$endif$,
+date=$if(bib-year)$$bib-year$$else$year$endif$,
+]{biblatex}
+\addbibresource{$bibliography$}
+$endif$
+
+$if(flush-left)$
+% load ragged2e for customization of text alignment
+\usepackage[document]{ragged2e}
+$endif$
+
+% load package to customize spacing
+\usepackage{setspace}
+
+% load blindtext for testing purposes
+\usepackage{blindtext}
+
+% include optional statements from yaml in the preamble
+$for(preamble-include)$
+$preamble-include$
+$endfor$
+
+\title{$title$}
+\author{$for(author)$$author$\and$endfor$}
+\date{$date$}
+
+\begin{document}
+
+\onehalfspacing % set line spacing 1.5
+
+$body$
+
+\end{document}
