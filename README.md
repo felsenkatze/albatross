@@ -18,6 +18,16 @@ For use with school requirements, call
 pandoc -f markdown input.md -t latex --template albatross.tex -o output.pdf --pdf-engine=xelatex --metadata-file school.yaml
 ```
 
+To use the biblatex package, it is necessary to convert the markdown file first to `.tex` and then compile it with `xelatex` and `biber`:
+
+```sh
+pandoc -f markdown input.md -t latex --template albatross.tex -o output.tex
+xelatex output.tex
+biber output
+xelatex output.tex
+xelatex output.tex
+```
+
 # Custom Vars
 
 | var              | values                   | purpose                                                                  |
