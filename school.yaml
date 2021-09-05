@@ -22,9 +22,12 @@ include-before:
   - \pagestyle{school}
 dot-after-section: true
 include-after:
-  - \printbibliography[type=book,title={Bücher}]
-  - \printbibliography[type=incollection,title={Sammelbände}]
-  - \printbibliography[type=article,title={Artikel}]
-  - \printbibliography[type=online,title={Internet}]
-  - \printbibliography[type=video,title={Videos}]
-  - \printbibliography[nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={Andere}]
+  - \section{Quellen}
+  - \refstepcounter{subsection}
+  - \defbibnote{stepCounter}{\setstretch{0}\refstepcounter{subsection}}
+  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=book,title={\thesubsection\quad Bücher}]
+  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=incollection,title={\thesubsection\quad Sammelbände}]
+  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=article,title={\thesubsection\quad Artikel}]
+  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesubsection\quad Internet}]
+  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesubsection\quad Videos}]
+  - \printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesubsection\quad Andere}]
