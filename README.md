@@ -44,6 +44,7 @@ pandoc -f markdown input.md -t latex --template albatross.tex -o output.pdf --pd
 | ---------------- | ------------------------------------------ | -------------------------------------------------- |
 | preamble-include | latex statements to be put in the preamble | include exotic packages, or other things           |
 | include-before   | text, latex, whatever                      | insert text before the document inserted by pandoc |
+| include-after    | text, latex, whatever                      | insert text after the document inserted by pandoc  |
 
 | var             | values                             | purpose                            |
 | --------------- | ---------------------------------- | ---------------------------------- |

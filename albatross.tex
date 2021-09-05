@@ -72,6 +72,7 @@ timezones=$if(bib-timezone)$true$else$false$endif$,
 date=$if(bib-year)$$bib-year$$else$year$endif$,
 ]{biblatex}
 \addbibresource{$bibliography$}
+\DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
 $endif$
 
 % load titlesec to format the section titles
@@ -202,5 +203,9 @@ $include-before$
 $endfor$
 
 $body$
+
+$for(include-after)$
+$include-after$
+$endfor$
 
 \end{document}
