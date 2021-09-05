@@ -73,6 +73,7 @@ date=$if(bib-year)$$bib-year$$else$year$endif$,
 ]{biblatex}
 \addbibresource{$bibliography$}
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
+\AtEveryBibitem{\clearfield{pagetotal}}
 $endif$
 
 % load titlesec to format the section titles
