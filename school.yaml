@@ -21,3 +21,10 @@ include-before:
   - \clearpage
   - \pagestyle{school}
 dot-after-section: true
+include-after:
+  - \printbibliography[type=book,title={Bücher}]
+  - \printbibliography[type=incollection,title={Sammelbände}]
+  - \printbibliography[type=article,title={Artikel}]
+  - \printbibliography[type=online,title={Internet}]
+  - \printbibliography[type=video,title={Videos}]
+  - \printbibliography[nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={Andere}]
