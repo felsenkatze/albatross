@@ -39,6 +39,7 @@ xelatex output.tex
 | bib-autocite     | autocite style           | defaults to 'plain'                                                      |
 | bib-block        | block options (biblatex) | defaults to 'none'                                                       |
 | bib-timezone     | true, false              | defaults to false, if true, print the time zone in bibliography          |
+| bib-itemskip     | true, false              | set the space between bibliography entries                               |
 
 | var          | values             | purpose                                                             |
 | ------------ | ------------------ | ------------------------------------------------------------------- |

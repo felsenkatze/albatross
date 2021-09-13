@@ -4,6 +4,7 @@ left: 3cm
 right: 4cm
 bib-style: authortitle-ibid
 bib-autocite: footnote
+bib-itemskip: \baselineskip
 flush-left: true
 main-font: Liberation Mono
 font-size: 12pt

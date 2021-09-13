@@ -46,5 +46,5 @@ Roadmap for school requirements
     - [x] sorted name, year (title)
     - option to divide bibliography based on resource type (book, website, etc.)
     - [ ] delimiter: comma
-    - [ ] blank line after entry
+    - [x] blank line after entry
 - [ ] printed webpages if used as sources

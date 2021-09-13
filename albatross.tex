@@ -85,6 +85,7 @@ date=$if(bib-year)$$bib-year$$else$year$endif$,
 \addbibresource{$bibliography$}
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
 \AtEveryBibitem{\clearfield{pagetotal}}
+$if(bib-itemskip)$\setlength{\bibitemsep}{$bib-itemskip$}$endif$
 $endif$
 
 % load titlesec to format the section titles
