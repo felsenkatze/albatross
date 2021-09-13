@@ -25,6 +25,17 @@
 
 % load csquotes for quoation formating
 \usepackage{csquotes}
+% if » is used in text, it gets interpreted as opening quote
+% if « is used, ... as closing quote
+\MakeAutoQuote{»}{«}
+% set quote style based on used language
+\setquotestyle{$if(lang)$$lang$$else$german$endif$}
+$if(school-quotes)$
+% declare school specific quote style and apply it
+\DeclareQuoteStyle[]{school}[][]{\quotedblbase}[]{\textquotedblright}[]{\textquotesingle}[]{\textquotesingle}
+\DeclareQuoteOption{school}
+\setquotestyle{school}
+$endif$
 
 % load graphicx for image processing
 \usepackage{graphicx}
