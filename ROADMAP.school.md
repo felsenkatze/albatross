@@ -31,9 +31,9 @@ Roadmap for school requirements
             - 2.1
             - 2.2
         - 3.
-- [ ] citations
-    - [ ] beginning and end of quote with double quotation marks
-    - [ ] quote inside quote with single quotes
+- [x] citations
+    - [x] beginning and end of quote with double quotation marks
+    - [x] quote inside quote with single quotes
     - [x] citation in footnote by default
         - [x] numerical footnotes
         - [x] contains => authortitle-ibid
