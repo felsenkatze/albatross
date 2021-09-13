@@ -75,10 +75,11 @@ Information on optional titlepage:
 | date      | string           | date of last document edit       |
 | institute | array of strings | print the location of school     |
 
-| var               | values      | purpose                                                         |
-| ----------------- | ----------- | --------------------------------------------------------------- |
-| dot-after-section | true, false | whether to print a dot after the section number, e.g. 1., I.    |
-| school-quotes     | true, false | use school requirements for quotes, otherwise language defaults |
+| var                 | values      | purpose                                                         |
+| ------------------- | ----------- | --------------------------------------------------------------- |
+| dot-after-section   | true, false | whether to print a dot after the section number, e.g. 1., I.    |
+| school-quotes       | true, false | use school requirements for quotes, otherwise language defaults |
+| school-heading-size | true, false | use the sizes for headings, see [ROADMAP](ROADMAP.school.md)    |
 
 # Limitations
 

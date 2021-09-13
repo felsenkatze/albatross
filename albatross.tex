@@ -90,11 +90,11 @@ $endif$
 % load titlesec to format the section titles
 \usepackage{titlesec}
 \titleformat{\section} % format sections
-  {\large\scshape}{\thesection}{0.5cm}{}
+  {$if(school-heading-size)$\fontsize{15pt}{15pt}\selectfont$else$\large$endif$\scshape}{\thesection}{0.5cm}{}
 \titleformat{\subsection} % format subsections
-  {\large\scshape}{\thesubsection}{0.5cm}{}
+  {$if(school-heading-size)$\fontsize{14pt}{14pt}\selectfont$else$\large$endif$\scshape}{\thesubsection}{0.5cm}{}
 \titleformat{\subsubsection} % format subsubsections
-  {\large\scshape}{\thesubsubsection}{0.5cm}{}
+  {$if(school-heading-size)$\fontsize{13pt}{13pt}\selectfont$else$\large$endif$\scshape}{\thesubsubsection}{0.5cm}{}
 
 $if(dot-after-section)$
 \renewcommand{\thesection}{\arabic{section}.}

@@ -11,10 +11,11 @@ Roadmap for school requirements
 - [x] flush left (maybe justified -> add option for this)
 - [x] font Courier New or equal
     - I chose "Liberation Mono" because it is an open one
-- [ ] font size
+- [x] font size
     - [x] normal text 12pt
     - [x] footnotes, blockquotes, etc. 10pt
-    - [ ] headings 1pt to 2pt bigger than normal text and subheadings
+    - [x] headings 1pt to 2pt bigger than normal text and subheadings
+        - I use 13pt for subsub, 14pt for sub, 15 for section
 - [x] titlepage
     - [x] title
     - [x] type of work

@@ -21,6 +21,7 @@ include-before:
   - \clearpage
   - \pagestyle{school}
 dot-after-section: true
+school-heading-size: true
 include-after:
   - \section{Quellen}
   - \refstepcounter{subsection}
