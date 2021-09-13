@@ -11,10 +11,10 @@ Roadmap for school requirements
 - [x] flush left (maybe justified -> add option for this)
 - [x] font Courier New or equal
     - I chose "Liberation Mono" because it is an open one
-- [] font size
+- [ ] font size
     - [x] normal text 12pt
     - [x] footnotes, blockquotes, etc. 10pt
-    - [] headings 1pt to 2pt bigger than normal text and subheadings
+    - [ ] headings 1pt to 2pt bigger than normal text and subheadings
 - [x] titlepage
     - [x] title
     - [x] type of work
@@ -31,9 +31,9 @@ Roadmap for school requirements
             - 2.1
             - 2.2
         - 3.
-- [] citations
-    - [] beginning and end of quote with double quotation marks
-    - [] quote inside quote with single quotes
+- [ ] citations
+    - [ ] beginning and end of quote with double quotation marks
+    - [ ] quote inside quote with single quotes
     - [x] citation in footnote by default
         - [x] numerical footnotes
         - [x] contains => authortitle-ibid
@@ -41,8 +41,9 @@ Roadmap for school requirements
             - short title
             - (year)
             - page
-- [] bibliography
+- [ ] bibliography
     - [x] sorted name, year (title)
     - option to divide bibliography based on resource type (book, website, etc.)
-    - [] delimiter: comma
-- [] printed webpages if used as sources
+    - [ ] delimiter: comma
+    - [ ] blank line after entry
+- [ ] printed webpages if used as sources
