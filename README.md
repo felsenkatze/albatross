@@ -57,10 +57,12 @@ xelatex output.tex
 | include-before   | text, latex, whatever                      | insert text before the document inserted by pandoc |
 | include-after    | text, latex, whatever                      | insert text after the document inserted by pandoc  |
 
-| var             | values                             | purpose                            |
-| --------------- | ---------------------------------- | ---------------------------------- |
-| caption-options | options for cation package         | define options for caption package |
-| pagestyle       | pagestyle name defined in preamble | set the default pagestyle          |
+| var               | values                                | purpose                                               |
+| ----------------- | ------------------------------------- | ----------------------------------------------------- |
+| caption-options   | options for cation package            | define options for caption package                    |
+| pagestyle         | pagestyle name defined in preamble    | set the default pagestyle                             |
+| csquotes-commands | commands to be inserted near csquotes | insert custom commands, i.e. quote style declaration  |
+| h<n>-size         | font size                             | set the font size for heading on n level (h1, h2, h3) |
 
 Information on optional titlepage:
 
@@ -76,11 +78,9 @@ Information on optional titlepage:
 | date      | string           | date of last document edit       |
 | institute | array of strings | print the location of school     |
 
-| var                 | values      | purpose                                                         |
-| ------------------- | ----------- | --------------------------------------------------------------- |
-| dot-after-section   | true, false | whether to print a dot after the section number, e.g. 1., I.    |
-| school-quotes       | true, false | use school requirements for quotes, otherwise language defaults |
-| school-heading-size | true, false | use the sizes for headings, see [ROADMAP](ROADMAP.school.md)    |
+| var               | values      | purpose                                                      |
+| ----------------- | ----------- | ------------------------------------------------------------ |
+| dot-after-section | true, false | whether to print a dot after the section number, e.g. 1., I. |
 
 # Limitations
 

@@ -10,6 +10,10 @@ main-font: Liberation Mono
 font-size: 12pt
 paper-format: a4paper
 lang: ngerman
+csquotes-commands:
+  - \DeclareQuoteStyle{school}{\quotedblbase}{\textquotedblright}{\textquotesingle}{\textquotesingle}
+  - \DeclareQuoteOption{school}
+  - \setquotestyle{school}
 pagestyle: school
 titlepage: true
 institute:
@@ -22,7 +26,9 @@ include-before:
   - \clearpage
   - \pagestyle{school}
 dot-after-section: true
-school-heading-size: true
+h1-size: 15pt
+h2-size: 14pt
+h3-size: 13pt
 include-after:
   - \section{Quellen}
   - \refstepcounter{subsection}

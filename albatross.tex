@@ -30,12 +30,10 @@
 \MakeAutoQuote{»}{«}
 % set quote style based on used language
 \setquotestyle{$if(lang)$$lang$$else$german$endif$}
-$if(school-quotes)$
-% declare school specific quote style and apply it
-\DeclareQuoteStyle[]{school}[][]{\quotedblbase}[]{\textquotedblright}[]{\textquotesingle}[]{\textquotesingle}
-\DeclareQuoteOption{school}
-\setquotestyle{school}
-$endif$
+% custom commands for csquotes
+$for(csquotes-commands)$
+$csquotes-commands$
+$endfor$
 
 % load graphicx for image processing
 \usepackage{graphicx}
@@ -91,11 +89,11 @@ $endif$
 % load titlesec to format the section titles
 \usepackage{titlesec}
 \titleformat{\section} % format sections
-  {$if(school-heading-size)$\fontsize{15pt}{15pt}\selectfont$else$\large$endif$\scshape}{\thesection}{0.5cm}{}
+  {$if(h1-size)$\fontsize{$h1-size$}{$h1-size$}\selectfont$else$\large$endif$\scshape}{\thesection}{0.5cm}{}
 \titleformat{\subsection} % format subsections
-  {$if(school-heading-size)$\fontsize{14pt}{14pt}\selectfont$else$\large$endif$\scshape}{\thesubsection}{0.5cm}{}
+  {$if(h2-size)$\fontsize{$h2-size$}{$h2-size$}\selectfont$else$\large$endif$\scshape}{\thesubsection}{0.5cm}{}
 \titleformat{\subsubsection} % format subsubsections
-  {$if(school-heading-size)$\fontsize{13pt}{13pt}\selectfont$else$\large$endif$\scshape}{\thesubsubsection}{0.5cm}{}
+  {$if(h3-size)$\fontsize{$h3-size$}{$h3-size$}\selectfont$else$\large$endif$\scshape}{\thesubsubsection}{0.5cm}{}
 
 $if(dot-after-section)$
 \renewcommand{\thesection}{\arabic{section}.}
