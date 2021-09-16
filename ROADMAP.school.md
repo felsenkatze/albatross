@@ -47,4 +47,9 @@ Roadmap for school requirements
     - option to divide bibliography based on resource type (book, website, etc.)
     - [ ] delimiter: comma
     - [x] blank line after entry
-- [ ] printed webpages if used as sources
+- [ ] gurantee doing the work alone
+- [ ] formula allow school to publish inside school
+- [ ] appendix
+    - [ ] printed webpages if used as sources
+    - [ ] link to page when referenced
+    - [ ] name of material starting with A, i.e. "A1", "A2", ...
