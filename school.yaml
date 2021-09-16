@@ -39,3 +39,15 @@ include-after:
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesubsection\quad Internet}]
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesubsection\quad Videos}]
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesubsection\quad Andere}]
+  - \section{Versicherung}
+  - Hiermit versichere ich, dass ich meine Facharbeit selbstständig angefertigt, keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Facharbeit, die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken übernommen wurden, mit genauer Quellenangabe kenntlich gemacht habe. 
+  - 
+  - Mir ist bekannt, dass nicht ordnungsgemäße Quellenangaben und/ oder die Verwendung von nicht angegebenen Arbeiten oder Hilfsmitteln als Täuschungsversuch gewertet werden.
+  - 
+  - \doubleSignature{(Unterschrift)}{(Ort, Datum)}
+  - 
+  - \section{Einverständniserklärung}
+  - Hiermit erkläre ich, dass ich damit einverstanden bin / nicht damit einverstanden bin (Nichtzutreffendes auslassen!), wenn die von mir verfasste Facharbeit gegebenenfalls der schulinternen Öffentlichkeit zugänglich gemacht wird.
+  - 
+  - \doubleSignature{(Unterschrift)}{(Ort, Datum)}
+

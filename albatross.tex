@@ -165,6 +165,21 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+% define command for use with signatures
+% it produces two lines to write on, each 5cm wide
+\newcommand{\doubleSignature}[2]{
+  \begin{minipage}[c]{\textwidth}
+  \vspace{2cm}
+  \makebox[12cm][c]{
+  \hfill \makebox[6cm][c] {\hrulefill} \hfill \makebox[5cm][c] {\hrulefill} \hfill
+  }
+  \makebox[12cm][c]{
+  \hfill #2 \hfill #1 \hfill
+  }
+  \vspace{1cm}
+  \end{minipage}
+  }
+
 % include optional statements from yaml in the preamble
 $for(preamble-include)$
 $preamble-include$
