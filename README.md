@@ -63,6 +63,7 @@ xelatex output.tex
 | pagestyle         | pagestyle name defined in preamble    | set the default pagestyle                             |
 | csquotes-commands | commands to be inserted near csquotes | insert custom commands, i.e. quote style declaration  |
 | h<n>-size         | font size                             | set the font size for heading on n level (h1, h2, h3) |
+| pdfpages          | true, false                           | usepackage pdfpages                                   |
 
 Information on optional titlepage:
 

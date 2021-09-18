@@ -15,6 +15,7 @@ csquotes-commands:
   - \DeclareQuoteOption{school}
   - \setquotestyle{school}
 pagestyle: school
+pdfpages: true
 titlepage: true
 institute:
   - Gymnasium Neu Wulmstorf

@@ -153,6 +153,10 @@ $endif$
 % set spacing in footnotes to single
 \renewcommand{\footnotelayout}{\setstretch{1}}
 
+$if(pdfpages)$
+\usepackage{pdfpages}
+$endif$
+
 $if(flush-left)$
 % load ragged2e for customization of text alignment
 \usepackage[document]{ragged2e}
@@ -167,6 +171,7 @@ $endif$
 
 % define command for use with signatures
 % it produces two lines to write on, each 5cm wide
+% got it from here: https://stackoverflow.com/questions/1436061/how-to-make-a-signature-field-in-latex
 \newcommand{\doubleSignature}[2]{
   \begin{minipage}[c]{\textwidth}
   \vspace{2cm}
