@@ -49,7 +49,9 @@ Roadmap for school requirements
     - [x] blank line after entry
 - [x] gurantee doing the work alone
 - [x] formula allow school to publish inside school
-- [ ] appendix
-    - [ ] printed webpages if used as sources
-    - [ ] link to page when referenced
-    - [ ] name of material starting with A, i.e. "A1", "A2", ...
+- [x] appendix
+    - [x] printed webpages if used as sources (use includepdf in appendix var, i.e. `\includepdf[pages=-, addtotoc={1, subsection, 2, title, key}, pagecommand={\thispagestyle{school}}]{file.pdf}`)
+    - [x] link to page when referenced (use pageref)
+    - [x] name of material starting with A, i.e. "A1", "A2", ...
+    - [x] material not showing up in toc
+    - [x] partial toc for material

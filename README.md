@@ -56,6 +56,9 @@ xelatex output.tex
 | preamble-include | latex statements to be put in the preamble | include exotic packages, or other things           |
 | include-before   | text, latex, whatever                      | insert text before the document inserted by pandoc |
 | include-after    | text, latex, whatever                      | insert text after the document inserted by pandoc  |
+| appendix         | text, latex, whatever                      | inserted after document and before include-after   |
+| appendix-before  | text, latex, whatever                      | inserted directly before appendix                  |
+| appendix-after   | text, latex, whatever                      | inserted directly after appendix                   |
 
 | var               | values                                | purpose                                               |
 | ----------------- | ------------------------------------- | ----------------------------------------------------- |
@@ -64,6 +67,7 @@ xelatex output.tex
 | csquotes-commands | commands to be inserted near csquotes | insert custom commands, i.e. quote style declaration  |
 | h<n>-size         | font size                             | set the font size for heading on n level (h1, h2, h3) |
 | pdfpages          | true, false                           | usepackage pdfpages                                   |
+| titletoc          | true, false                           | usepackage titletoc (customize TOCs)                  |
 
 Information on optional titlepage:
 

@@ -16,22 +16,35 @@ csquotes-commands:
   - \setquotestyle{school}
 pagestyle: school
 pdfpages: true
+titletoc: true
 titlepage: true
 institute:
   - Gymnasium Neu Wulmstorf
   - Ernst-Moritz-Arndt-Str. 20
   - 21629 Neu Wulmstorf
 include-before:
+  - \startcontents
   - \pagestyle{plain}
-  - \tableofcontents
+  - \printcontents{}{1}{\section*{Inhaltsverzeichnis}}
   - \clearpage
   - \pagestyle{school}
 dot-after-section: true
 h1-size: 15pt
 h2-size: 14pt
 h3-size: 13pt
+appendix-before:
+  - \startcontents[appendix]
+  - \printcontents[appendix]{}{2}{\section{Anhang}}
+  - \stopcontents
+  - \clearpage
+  - \renewcommand{\thesubsection}{A\arabic{subsection}}
+appendix-after:
+  - \stopcontents[appendix]
+  - \resumecontents
 include-after:
   - \section{Quellen}
+  # reset numbering of subsection for 'normal' parts
+  - \renewcommand{\thesubsection}{\thesection\arabic{subsection}}
   - \refstepcounter{subsection}
   - \defbibnote{stepCounter}{\setstretch{0}\refstepcounter{subsection}}
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=book,title={\thesubsection\quad Bücher}]

@@ -44,6 +44,12 @@ $endfor$
 % load url to format urls
 \usepackage{url}
 
+$if(titletoc)$
+% titletoc for customized table of contents
+% needs to be loaded before hyperref, otherwise errors occur
+\usepackage{titletoc}
+$endif$
+
 \usepackage[ % load hyperref for links in the generated pdf
    colorlinks, % links in color with no border
    linkcolor=black, % internal references
@@ -234,6 +240,21 @@ $include-before$
 $endfor$
 
 $body$
+
+$if(appendix)$
+% commands executed before the appendix section
+$for(appendix-before)$
+$appendix-before$
+$endfor$
+% the 'real' appendix
+$for(appendix)$
+$appendix$
+$endfor$
+% commands executed after the appendix section
+$for(appendix-after)$
+$appendix-after$
+$endfor$
+$endif$
 
 $for(include-after)$
 $include-after$
