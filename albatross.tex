@@ -88,6 +88,8 @@ date=$if(bib-year)$$bib-year$$else$year$endif$,
 ]{biblatex}
 \addbibresource{$bibliography$}
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
+\DeclareNameAlias{author}{last-first}
+\renewcommand*{\multinamedelim}{\addsemicolon\addspace}
 \AtEveryBibitem{\clearfield{pagetotal}}
 $if(bib-itemskip)$\setlength{\bibitemsep}{$bib-itemskip$}$endif$
 $endif$
