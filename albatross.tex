@@ -92,6 +92,7 @@ date=$if(bib-year)$$bib-year$$else$year$endif$,
 \renewcommand*{\multinamedelim}{\addsemicolon\addspace}
 \AtEveryBibitem{\clearfield{pagetotal}}
 $if(bib-itemskip)$\setlength{\bibitemsep}{$bib-itemskip$}$endif$
+$if(bib-et-al)$\DefineBibliographyStrings{$lang$}{andothers = {et al.}}$endif$
 $endif$
 
 % load titlesec to format the section titles

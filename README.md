@@ -40,6 +40,7 @@ xelatex output.tex
 | bib-block        | block options (biblatex) | defaults to 'none'                                                       |
 | bib-timezone     | true, false              | defaults to false, if true, print the time zone in bibliography          |
 | bib-itemskip     | true, false              | set the space between bibliography entries                               |
+| bib-et-al        | true, false              | use 'et al.' instead of the lang default                                 |
 
 | var          | values             | purpose                                                             |
 | ------------ | ------------------ | ------------------------------------------------------------------- |
