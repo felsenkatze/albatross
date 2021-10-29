@@ -93,6 +93,9 @@ date=$if(bib-year)$$bib-year$$else$year$endif$,
 \AtEveryBibitem{\clearfield{pagetotal}}
 $if(bib-itemskip)$\setlength{\bibitemsep}{$bib-itemskip$}$endif$
 $if(bib-et-al)$\DefineBibliographyStrings{$lang$}{andothers = {et al.}}$endif$
+$for(bib-commands)$
+$bib-commands$
+$endfor$
 $endif$
 
 % load titlesec to format the section titles
@@ -219,14 +222,14 @@ $if(titlepage)$
 \vspace*{2cm}
 
 \begin{tabular}{p{3.5cm}|p{0.1cm} p{10cm}l}
-  \textsc{Name:}                   &  & \textsc{$author$}   \\
-  $if(subject)$\textsc{Fach:}      &  & \textsc{$subject$}  \\ $endif$
-  $if(course)$\textsc{Kurs:}       &  & \textsc{$course$}   \\ $endif$
-  $if(semester)$\textsc{Semester:} &  & \textsc{$semester$} \\ $endif$
-  $if(email)$\textsc{E-Mail:}      &  & \textsc{$email$}    \\ $endif$
-  $if(teacher)$\textsc{Lehrkraft:} &  & \textsc{$teacher$}  \\ $endif$
-  $if(tutor)$\textsc{TutorIn:}     &  & \textsc{$tutor$}    \\ $endif$
-  $if(date)$\textsc{Abgabedatum:}  &  & \textsc{$date$}     \\ $endif$
+  \textsc{Name:}                   &  & $for(author)$\textsc{$author$}$sep$\newline$endfor$ \\
+  $if(subject)$\textsc{Fach:}      &  & \textsc{$subject$}                                  \\ $endif$
+  $if(course)$\textsc{Kurs:}       &  & \textsc{$course$}                                   \\ $endif$
+  $if(semester)$\textsc{Semester:} &  & \textsc{$semester$}                                 \\ $endif$
+  $if(email)$\textsc{E-Mail:}      &  & \textsc{$email$}                                    \\ $endif$
+  $if(teacher)$\textsc{Lehrkraft:} &  & \textsc{$teacher$}                                  \\ $endif$
+  $if(tutor)$\textsc{TutorIn:}     &  & \textsc{$tutor$}                                    \\ $endif$
+  $if(date)$\textsc{Abgabedatum:}  &  & \textsc{$date$}                                     \\ $endif$
 \end{tabular}
 
 \vspace*{4cm}
