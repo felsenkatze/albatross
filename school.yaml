@@ -11,10 +11,12 @@ main-font: Liberation Mono
 font-size: 12pt
 paper-format: a4paper
 lang: ngerman
-csquotes-commands:
-  - \DeclareQuoteStyle{school}{\quotedblbase}{\textquotedblright}{\textquotesingle}{\textquotesingle}
-  - \DeclareQuoteOption{school}
-  - \setquotestyle{school}
+csquotes-commands: |
+  ```{=latex}
+  \DeclareQuoteStyle{school}{\quotedblbase}{\textquotedblright}{\textquotesingle}{\textquotesingle}
+  \DeclareQuoteOption{school}
+  \setquotestyle{school}
+  ```
 pagestyle: school
 pdfpages: true
 titletoc: true
@@ -83,38 +85,44 @@ preamble-include: |
     \titlecontents{subsection}[1.5cm]{\addvspace{0.3em}}{\contentslabel{1cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
     \titlecontents{subsubsection}[3cm]{\addvspace{0.2em}}{\contentslabel{2cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
     ```
-appendix-before:
-  - \clearpage
-  - \startcontents[appendix]
-  - \printcontents[appendix]{}{2}{\section{Anhang}}
-  - \stopcontents
-  - \clearpage
-  - \renewcommand{\thesubsection}{A\arabic{subsection}}
-appendix-after:
-  - \stopcontents[appendix]
-  - \resumecontents
-include-after:
-  - \section{Quellen}
-  # reset numbering of subsection for 'normal' parts
-  - \renewcommand{\thesubsection}{\thesection\arabic{subsection}}
-  - \refstepcounter{subsection}
-  - \defbibnote{stepCounter}{\setstretch{0}\refstepcounter{subsection}}
-  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=book,title={\thesubsection\quad Bücher}]
-  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=incollection,title={\thesubsection\quad Sammelbände}]
-  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=article,title={\thesubsection\quad Artikel}]
-  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesubsection\quad Internet}]
-  - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesubsection\quad Videos}]
-  - \printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesubsection\quad Andere}]
-  - \clearpage
-  - \section{Versicherung}
-  - Hiermit versichere ich, dass ich meine Facharbeit selbstständig angefertigt, keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Facharbeit, die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken übernommen wurden, mit genauer Quellenangabe kenntlich gemacht habe. 
-  - 
-  - Mir ist bekannt, dass nicht ordnungsgemäße Quellenangaben und/ oder die Verwendung von nicht angegebenen Arbeiten oder Hilfsmitteln als Täuschungsversuch gewertet werden.
-  - 
-  - \doubleSignature{(Unterschrift)}{(Ort, Datum)}
-  - 
-  - \section{Einverständniserklärung}
-  - Hiermit erkläre ich, dass ich damit einverstanden bin / nicht damit einverstanden bin (Nichtzutreffendes auslassen!), wenn die von mir verfasste Facharbeit gegebenenfalls der schulinternen Öffentlichkeit zugänglich gemacht wird.
-  - 
-  - \doubleSignature{(Unterschrift)}{(Ort, Datum)}
+appendix-before: |
+  ```{=latex}
+  \clearpage
+  \startcontents[appendix]
+  \printcontents[appendix]{}{2}{\section{Anhang}}
+  \stopcontents
+  \clearpage
+  \renewcommand{\thesubsection}{A\arabic{subsection}}
+  ```
+appendix-after: |
+  ```{=latex}
+  \stopcontents[appendix]
+  \resumecontents
+  ```
+include-after: |
+  ```{=latex}
+  \section{Quellen}
+  % reset numbering of subsection for 'normal' parts
+  \renewcommand{\thesubsection}{\thesection\arabic{subsection}}
+  \refstepcounter{subsection}
+  \defbibnote{stepCounter}{\setstretch{0}\refstepcounter{subsection}}
+  \printbibliography[heading=subbibintoc,postnote=stepCounter,type=book,title={\thesubsection\quad Bücher}]
+  \printbibliography[heading=subbibintoc,postnote=stepCounter,type=incollection,title={\thesubsection\quad Sammelbände}]
+  \printbibliography[heading=subbibintoc,postnote=stepCounter,type=article,title={\thesubsection\quad Artikel}]
+  \printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesubsection\quad Internet}]
+  \printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesubsection\quad Videos}]
+  \printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesubsection\quad Andere}]
+  \clearpage
+  \section{Versicherung}
+  Hiermit versichere ich, dass ich meine Facharbeit selbstständig angefertigt, keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Facharbeit, die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken übernommen wurden, mit genauer Quellenangabe kenntlich gemacht habe. 
+  
+  Mir ist bekannt, dass nicht ordnungsgemäße Quellenangaben und/ oder die Verwendung von nicht angegebenen Arbeiten oder Hilfsmitteln als Täuschungsversuch gewertet werden.
+  
+  \doubleSignature{(Unterschrift)}{(Ort, Datum)}
+  
+  \section{Einverständniserklärung}
+  Hiermit erkläre ich, dass ich damit einverstanden bin / nicht damit einverstanden bin (Nichtzutreffendes auslassen!), wenn die von mir verfasste Facharbeit gegebenenfalls der schulinternen Öffentlichkeit zugänglich gemacht wird.
+  
+  \doubleSignature{(Unterschrift)}{(Ort, Datum)}
+  ```
 
