@@ -242,7 +242,7 @@ $if(titlepage)$
   $if(email)$\textsc{E-Mail:}      &  & \textsc{$email$}                                    \\ $endif$
   $if(teacher)$\textsc{Lehrkraft:} &  & \textsc{$teacher$}                                  \\ $endif$
   $if(tutor)$\textsc{TutorIn:}     &  & \textsc{$tutor$}                                    \\ $endif$
-  $fi(location)$\textsc{Ort:}      &  & \textsc{$location$}                                 \\ $endif$
+  $if(location)$\textsc{Ort:}      &  & \textsc{$location$}                                 \\ $endif$
   $if(date)$\textsc{Abgabedatum:}  &  & \textsc{$date$}                                     \\ $endif$
 \end{tabular}
 
