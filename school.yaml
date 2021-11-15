@@ -18,17 +18,61 @@ csquotes-commands:
 pagestyle: school
 pdfpages: true
 titletoc: true
-titlepage: true
+titlepage: false
 institute:
   - Gymnasium Neu Wulmstorf
   - Ernst-Moritz-Arndt-Str. 20
   - 21629 Neu Wulmstorf
-include-before:
-  - \startcontents
-  - \pagestyle{plain}
-  - \printcontents{}{1}{\section*{Inhaltsverzeichnis}}
-  - \clearpage
-  - \pagestyle{school}
+include-before: |
+  ```{=latex}
+  %titlepage contents
+  \pagestyle{plain}
+  \begin{center}
+  \vspace*{2.5cm}
+  \centering
+  \textbf{\thetitle}
+
+  \vspace{2cm}
+
+  Facharbeit am
+
+  \vspace{0.5cm}
+
+  \theschool
+  
+  \vspace{2cm}
+
+  vorgelegt von
+
+  \vspace{0.5cm}
+
+  \textbf{\theauthor}
+
+  \vspace{2cm}
+
+  \underline{Fach}: \thesubject
+
+  \vspace*{0.25cm}
+
+  \underline{Fachbetreuer}: \thefachbetreuer
+
+  \vspace*{0.25cm}
+
+  \underline{Seminarfachlehrer}: \theseminarlehrer
+
+  \vspace{4cm}
+
+  \thelocation, den \thedate
+  \end{center}
+
+  \clearpage
+
+  % toc
+  \startcontents
+  \printcontents{}{1}{\section*{Inhaltsverzeichnis}}
+  \clearpage
+  \pagestyle{school}
+  ```
 dot-after-section: true
 h1-size: 15pt
 h2-size: 14pt

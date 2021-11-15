@@ -197,6 +197,19 @@ $endif$
   \end{minipage}
   }
 
+%%% commands needed to build school required titlepage
+
+\newcommand{\thetitle}{$title$}
+\newcommand{\thesubject}{$subject$}
+\newcommand{\thelocation}{$location$}
+\newcommand{\thedate}{$date$}
+\newcommand{\theauthor}{$for(author)$$author$$endfor$}
+\newcommand{\thefachbetreuer}{$teacher$}
+\newcommand{\theseminarlehrer}{$tutor$}
+\newcommand{\theschool}{$for(institute)$$institute$\linebreak $endfor$}
+
+%%%
+
 % include optional statements from yaml in the preamble
 $for(preamble-include)$
 $preamble-include$
@@ -229,6 +242,7 @@ $if(titlepage)$
   $if(email)$\textsc{E-Mail:}      &  & \textsc{$email$}                                    \\ $endif$
   $if(teacher)$\textsc{Lehrkraft:} &  & \textsc{$teacher$}                                  \\ $endif$
   $if(tutor)$\textsc{TutorIn:}     &  & \textsc{$tutor$}                                    \\ $endif$
+  $fi(location)$\textsc{Ort:}      &  & \textsc{$location$}                                 \\ $endif$
   $if(date)$\textsc{Abgabedatum:}  &  & \textsc{$date$}                                     \\ $endif$
 \end{tabular}
 

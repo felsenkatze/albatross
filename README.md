@@ -83,6 +83,7 @@ Information on optional titlepage:
 | tutor     | string           | personal tutor                   |
 | date      | string           | date of last document edit       |
 | institute | array of strings | print the location of school     |
+| location  | string           | location of author               |
 
 | var               | values      | purpose                                                      |
 | ----------------- | ----------- | ------------------------------------------------------------ |
