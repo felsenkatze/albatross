@@ -77,6 +77,12 @@ dot-after-section: true
 h1-size: 15pt
 h2-size: 14pt
 h3-size: 13pt
+preamble-include: |
+    ```{=latex}
+    \titlecontents{section}[0.5cm]{\addvspace{0.6em}\bfseries}{\contentslabel{1cm}}{}{\titlerule*[1pc]{}\contentspage}[]
+    \titlecontents{subsection}[1.5cm]{\addvspace{0.3em}}{\contentslabel{1cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
+    \titlecontents{subsubsection}[3cm]{\addvspace{0.2em}}{\contentslabel{2cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
+    ```
 appendix-before:
   - \clearpage
   - \startcontents[appendix]
