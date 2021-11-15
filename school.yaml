@@ -105,6 +105,7 @@ include-after:
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesubsection\quad Internet}]
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesubsection\quad Videos}]
   - \printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesubsection\quad Andere}]
+  - \clearpage
   - \section{Versicherung}
   - Hiermit versichere ich, dass ich meine Facharbeit selbstständig angefertigt, keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Facharbeit, die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken übernommen wurden, mit genauer Quellenangabe kenntlich gemacht habe. 
   - 
