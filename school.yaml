@@ -90,6 +90,10 @@ preamble-include: |
     % stupid spaces with bibintoc, therefore following customizations commented out
     % \titlecontents{subsection}[1.5cm]{\addvspace{0.3em}}{\contentslabel{1cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
     % \titlecontents{subsubsection}[3cm]{\addvspace{0.2em}}{\contentslabel{2cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
+    
+    % remove dot after footnote citations
+    \renewcommand{\bibfootnotewrapper}[1]{%
+      \bibsentence#1}
     ```
 appendix-before: |
   ```{=latex}
