@@ -67,7 +67,7 @@ include-before: |
 
   \thelocation, den \thedate
   \end{center}
-
+  \restoregeometry
   \clearpage
 
   % toc
@@ -75,6 +75,9 @@ include-before: |
   \printcontents{}{1}{\section*{Inhaltsverzeichnis}}
   \clearpage
   \pagestyle{school}
+
+  % set line spacing to 1.5
+  \onehalfspacing
   ```
 dot-after-section: true
 h1-size: 15pt
