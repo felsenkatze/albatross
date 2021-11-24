@@ -98,6 +98,9 @@ preamble-include: |
     \AtEveryBibitem{\ifentrytype{article}{}{\clearlist{publisher}}}
     % same format for all titles
     \DeclareFieldFormat*{title}{\mkbibemph{#1}}
+
+    % higher emergency stretch, for best look
+    \emergencystretch=3em
     ```
 appendix-before: |
   ```{=latex}
