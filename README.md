@@ -41,6 +41,10 @@ xelatex output.tex
 | bib-timezone     | true, false              | defaults to false, if true, print the time zone in bibliography          |
 | bib-itemskip     | true, false              | set the space between bibliography entries                               |
 | bib-et-al        | true, false              | use 'et al.' instead of the lang default                                 |
+| bib-sorting      | biblatex sort options    | set the sorting of citations in the bibliography                         |
+| bib-doi          | true, false              | print doi                                                                |
+| bib-nourl        | true, false              | do not print url                                                         |
+| bib-isbn         | true, false              | print isbn                                                               |
 
 | var          | values             | purpose                                                             |
 | ------------ | ------------------ | ------------------------------------------------------------------- |
