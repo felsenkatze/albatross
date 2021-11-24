@@ -7,7 +7,7 @@ bib-autocite: footnote
 bib-itemskip: \baselineskip
 bib-et-al: true
 flush-left: true
-main-font: Liberation Mono
+main-font: Courier New
 font-size: 12pt
 paper-format: a4paper
 lang: ngerman
