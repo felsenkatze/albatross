@@ -94,6 +94,10 @@ preamble-include: |
     % remove dot after footnote citations
     \renewcommand{\bibfootnotewrapper}[1]{%
       \bibsentence#1}
+    % remove publisher (do not print it)
+    \AtEveryBibitem{\ifentrytype{article}{}{\clearlist{publisher}}}
+    % same format for all titles
+    \DeclareFieldFormat*{title}{\mkbibemph{#1}}
     ```
 appendix-before: |
   ```{=latex}
