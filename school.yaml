@@ -13,8 +13,12 @@ bib-commands: |
     \bibsentence#1}
   % remove publisher (do not print it)
   \AtEveryBibitem{\ifentrytype{article}{}{\clearlist{publisher}}}
-  % same format for all titles
-  \DeclareFieldFormat*{title}{\mkbibemph{#1}}
+  % same format for all titles and comma after it
+  \DeclareFieldFormat*{title}{\mkbibemph{#1}\addcomma}
+  % comma after the specified fields (not the solution I searched for and probably not the best, but for now it's working)
+  \DeclareFieldFormat*{edition}{#1\addcomma}
+  \DeclareFieldFormat*{translator}{#1\addcomma}
+  \DeclareFieldFormat*{pages}{S.\space#1\addcomma}
   ```
 flush-left: true
 main-font: Courier New
