@@ -6,6 +6,16 @@ bib-style: authortitle-ibid
 bib-autocite: footnote
 bib-itemskip: \baselineskip
 bib-et-al: true
+bib-commands: |
+  ```{=latex}
+  % remove dot after footnote citations
+  \renewcommand{\bibfootnotewrapper}[1]{%
+    \bibsentence#1}
+  % remove publisher (do not print it)
+  \AtEveryBibitem{\ifentrytype{article}{}{\clearlist{publisher}}}
+  % same format for all titles
+  \DeclareFieldFormat*{title}{\mkbibemph{#1}}
+  ```
 flush-left: true
 main-font: Courier New
 font-size: 12pt
@@ -90,14 +100,6 @@ preamble-include: |
     % stupid spaces with bibintoc, therefore following customizations commented out
     % \titlecontents{subsection}[1.5cm]{\addvspace{0.3em}}{\contentslabel{1cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
     % \titlecontents{subsubsection}[3cm]{\addvspace{0.2em}}{\contentslabel{2cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
-    
-    % remove dot after footnote citations
-    \renewcommand{\bibfootnotewrapper}[1]{%
-      \bibsentence#1}
-    % remove publisher (do not print it)
-    \AtEveryBibitem{\ifentrytype{article}{}{\clearlist{publisher}}}
-    % same format for all titles
-    \DeclareFieldFormat*{title}{\mkbibemph{#1}}
 
     % higher emergency stretch, for best look
     \emergencystretch=3em
