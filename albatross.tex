@@ -57,7 +57,7 @@ $endif$
    citecolor=black, % citations
    urlcolor =black, % urls
 ]{hyperref}
-\hypersetup{$if(author)$pdfauthor=$author$,$endif$$if(title)$pdftitle=$title$,$endif$$if(subject)$pdfsubject=$subject$,$endif$
+\hypersetup{$if(author)$pdfauthor=$for(author)$$author$,$endfor$$endif$$if(title)$pdftitle=$title$,$endif$$if(subject)$pdfsubject=$subject$,$endif$
 }
 
 % load geometry for cusomization of page and set margins
@@ -216,7 +216,7 @@ $preamble-include$
 $endfor$
 
 \title{$title$}
-\author{$for(author)$$author$\and$endfor$}
+\author{$for(author)$$author$\and $endfor$}
 \date{$date$}
 
 \begin{document}
