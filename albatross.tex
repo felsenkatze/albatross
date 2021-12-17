@@ -215,6 +215,12 @@ $for(preamble-include)$
 $preamble-include$
 $endfor$
 
+% include optional statements in the preamble
+% this is the default variable and therefore used by filters like crossref
+$for(header-includes)$
+$header-includes$
+$endfor$
+
 \title{$title$}
 \author{$for(author)$$author$\and $endfor$}
 \date{$date$}
