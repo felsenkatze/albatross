@@ -90,7 +90,7 @@ include-before: |
 
   % toc
   \startcontents
-  \printcontents{}{1}{\section*{Inhaltsverzeichnis}}
+  \printcontents{}{1}{\subsection*{Inhaltsverzeichnis}}
   \clearpage
   \pagestyle{school}
 
@@ -116,7 +116,7 @@ appendix-before: |
   ```{=latex}
   \clearpage
   \startcontents[appendix]
-  \printcontents[appendix]{}{2}{\section{Anhang}}
+  \printcontents[appendix]{}{2}{\section{Anhang}\subsection*{Anhangsverzeichnis}}
   \stopcontents
   \clearpage
   \renewcommand{\thesubsection}{A\arabic{subsection}}
