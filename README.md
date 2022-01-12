@@ -65,14 +65,15 @@ xelatex output.tex
 | appendix-before  | text, latex, whatever                      | inserted directly before appendix                  |
 | appendix-after   | text, latex, whatever                      | inserted directly after appendix                   |
 
-| var               | values                                | purpose                                               |
-| ----------------- | ------------------------------------- | ----------------------------------------------------- |
-| caption-options   | options for cation package            | define options for caption package                    |
-| pagestyle         | pagestyle name defined in preamble    | set the default pagestyle                             |
-| csquotes-commands | commands to be inserted near csquotes | insert custom commands, i.e. quote style declaration  |
-| h<n>-size         | font size                             | set the font size for heading on n level (h1, h2, h3) |
-| pdfpages          | true, false                           | usepackage pdfpages                                   |
-| titletoc          | true, false                           | usepackage titletoc (customize TOCs)                  |
+| var                | values                                | purpose                                               |
+| ------------------ | ------------------------------------- | ----------------------------------------------------- |
+| caption-options    | options for catpion package           | define options for caption package                    |
+| subcaption-options | options for subcaption package        | define options for subcaption package                 |
+| pagestyle          | pagestyle name defined in preamble    | set the default pagestyle                             |
+| csquotes-commands  | commands to be inserted near csquotes | insert custom commands, i.e. quote style declaration  |
+| h<n>-size          | font size                             | set the font size for heading on n level (h1, h2, h3) |
+| pdfpages           | true, false                           | usepackage pdfpages                                   |
+| titletoc           | true, false                           | usepackage titletoc (customize TOCs)                  |
 
 Information on optional titlepage:
 

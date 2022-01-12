@@ -34,6 +34,10 @@ csquotes-commands: |
 pagestyle: school
 pdfpages: true
 titletoc: true
+caption-options: |
+  ```{=latex}
+  font={footnotesize}
+  ```
 titlepage: false
 institute:
   - Gymnasium Neu Wulmstorf
