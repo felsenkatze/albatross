@@ -18,7 +18,7 @@
 % load fontspec for font management
 \usepackage{fontspec}
 % set default font -> font must be installed on the system
-\setmainfont{Liberation Mono}
+\setmainfont{Courier New}
 
 % load babel for language management
 \usepackage[ngerman]{babel}
@@ -72,9 +72,9 @@ sorting=nyt,
 clearlang=true,
 backref=false,
 abbreviate=true,
-doi=true,
+doi=false,
 url=true,
-isbn=true,
+isbn=false,
 useauthor=true,
 usetranslator=true,
 maxcitenames=1,
@@ -86,8 +86,22 @@ date=year,
 ]{biblatex}
 \addbibresource{bibliography.bib}
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
+\DeclareNameAlias{author}{family-given}
+\renewcommand*{\multinamedelim}{\addsemicolon\addspace}
 \AtEveryBibitem{\clearfield{pagetotal}}
 \setlength{\bibitemsep}{\baselineskip}
+\DefineBibliographyStrings{ngerman}{andothers = {et al.}}
+% remove dot after footnote citations
+\renewcommand{\bibfootnotewrapper}[1]{%
+  \bibsentence#1}
+% remove publisher (do not print it)
+\AtEveryBibitem{\ifentrytype{article}{}{\clearlist{publisher}}}
+% same format for all titles and comma after it
+\DeclareFieldFormat*{title}{\mkbibemph{#1}\addcomma}
+% comma after the specified fields (not the solution I searched for and probably not the best, but for now it's working)
+\DeclareFieldFormat*{edition}{#1\addcomma}
+\DeclareFieldFormat*{translator}{#1\addcomma}
+\DeclareFieldFormat*{pages}{S.\space#1\addcomma}
 
 % load titlesec to format the section titles
 \usepackage{titlesec}
@@ -102,9 +116,9 @@ date=year,
 \renewcommand{\thesubsection}{\thesection\arabic{subsection}}
 
 % load caption to format captions of figures, tables, etc
-\usepackage[]{caption}
+\usepackage[font={footnotesize}]{caption}
 % load subcaption to be able to use subfigures, subtables, etc
-\usepackage{subcaption}
+\usepackage[]{subcaption}
 
 % load fancyhdr to format header and footer
 \usepackage{fancyhdr}
@@ -183,52 +197,94 @@ Wulmstorf \\}
   \end{minipage}
   }
 
+%%% commands needed to build school required titlepage
+
+\newcommand{\thetitle}{Deutsche Küche}
+\newcommand{\thesubject}{Futtern}
+\newcommand{\thelocation}{}
+\newcommand{\thedate}{\today}
+\newcommand{\theauthor}{Felsenkatze}
+\newcommand{\thefachbetreuer}{Fr.~Gulo Gulo}
+\newcommand{\theseminarlehrer}{Hr. Vielfraß}
+\newcommand{\theschool}{Gymnasium Neu
+Wulmstorf\linebreak Ernst-Moritz-Arndt-Str. 20\linebreak 21629 Neu
+Wulmstorf\linebreak }
+
+%%%
+
 % include optional statements from yaml in the preamble
+% set spacing in toc
+\titlecontents{section}[0.5cm]{\addvspace{0.6em}\bfseries}{\contentslabel{1cm}}{}{\titlerule*[1pc]{}\contentspage}[]
+% stupid spaces with bibintoc, therefore following customizations commented out
+% \titlecontents{subsection}[1.5cm]{\addvspace{0.3em}}{\contentslabel{1cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
+% \titlecontents{subsubsection}[3cm]{\addvspace{0.2em}}{\contentslabel{2cm}}{}{\titlerule*[1pc]{.}\contentspage}[]
+
+% higher emergency stretch, for best look
+\emergencystretch=3em
+
+% include optional statements in the preamble
+% this is the default variable and therefore used by filters like crossref
 
 \title{Deutsche Küche}
-\author{Felsenkatze\and}
+\author{Felsenkatze\and }
 \date{\today}
 
 \begin{document}
 
 \onehalfspacing % set line spacing 1.5
 
+
+%titlepage contents
+\newgeometry{top=2.5cm,bottom=2.0cm,left=2.5cm,right=2.5cm} % symmetric geometry for titlepage
 \pagestyle{plain}
-\vspace*{2cm}
-
 \begin{center}
-  {\huge Deutsche Küche}\\[1cm]
-  {\LARGE Die Herangehensweise an die Aufnahme von Essen mit besonderem
-Bezug zu fleischlichen Schnabulaten}\\[5cm]
+\vspace*{2.5cm}
+\centering
+\textbf{\thetitle}
+
+\vspace{2cm}
+
+Facharbeit am
+
+\vspace{0.5cm}
+
+\theschool
+
+\vspace{2cm}
+
+vorgelegt von
+
+\vspace{0.5cm}
+
+\textbf{\theauthor}
+
+\vspace{2cm}
+
+\underline{Fach}: \thesubject
+
+\vspace*{0.25cm}
+
+\underline{Fachbetreuer}: \thefachbetreuer
+
+\vspace*{0.25cm}
+
+\underline{Seminarfachlehrer}: \theseminarlehrer
+
+\vspace{4cm}
+
+\thelocation, den \thedate
 \end{center}
-
-\vspace*{2cm}
-
-\begin{tabular}{p{3.5cm}|p{0.1cm} p{10cm}l}
-  \textsc{Name:}                   &  & \textsc{Felsenkatze}   \\
-  \textsc{Fach:}      &  & \textsc{Futtern}  \\ 
-  
-  
-  
-  \textsc{Lehrkraft:} &  & \textsc{Fr.~Gulo Gulo}  \\ 
-  \textsc{TutorIn:}     &  & \textsc{Hr. Vielfraß}    \\ 
-  \textsc{Abgabedatum:}  &  & \textsc{\today}     \\ 
-\end{tabular}
-
-\vspace*{4cm}
-
-\begin{center}
-  Gymnasium Neu Wulmstorf \\Ernst-Moritz-Arndt-Str. 20 \\21629 Neu
-Wulmstorf \\
-\end{center}
+\restoregeometry
 \clearpage
-\pagestyle{school}
 
+% toc
 \startcontents
-\pagestyle{plain}
-\printcontents{}{1}{\section*{Inhaltsverzeichnis}}
+\printcontents{}{1}{\subsection*{Inhaltsverzeichnis}}
 \clearpage
 \pagestyle{school}
+
+% set line spacing to 1.5
+\onehalfspacing
 
 \nocite{*}
 
@@ -237,7 +293,7 @@ Wulmstorf \\
 % commands executed before the appendix section
 \clearpage
 \startcontents[appendix]
-\printcontents[appendix]{}{2}{\section{Anhang}}
+\printcontents[appendix]{}{2}{\section{Anhang}\subsection*{Anhangsverzeichnis}}
 \stopcontents
 \clearpage
 \renewcommand{\thesubsection}{A\arabic{subsection}}
@@ -248,33 +304,26 @@ Wulmstorf \\
 \resumecontents
 
 \section{Quellen}
+% reset numbering of subsection for 'normal' parts
 \renewcommand{\thesubsection}{\thesection\arabic{subsection}}
 \refstepcounter{subsection}
 \defbibnote{stepCounter}{\setstretch{0}\refstepcounter{subsection}}
-\printbibliography[heading=subbibintoc,postnote=stepCounter,type=book,title={\thesection\arabic{subsection}\quad Bücher}]
-\printbibliography[heading=subbibintoc,postnote=stepCounter,type=incollection,title={\thesection\arabic{subsection}\quad Sammelbände}]
-\printbibliography[heading=subbibintoc,postnote=stepCounter,type=article,title={\thesection\arabic{subsection}\quad Artikel}]
-\printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesection\arabic{subsection}\quad Internet}]
-\printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesection\arabic{subsection}\quad Videos}]
-\printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesection\arabic{subsection}\quad Andere}]
+\printbibliography[heading=subbibintoc,postnote=stepCounter,type=book,title={\thesubsection\quad Bücher}]
+\printbibliography[heading=subbibintoc,postnote=stepCounter,type=incollection,title={\thesubsection\quad Sammelbände}]
+\printbibliography[heading=subbibintoc,postnote=stepCounter,type=article,title={\thesubsection\quad Artikel}]
+\printbibliography[heading=subbibintoc,postnote=stepCounter,type=online,title={\thesubsection\quad Internet}]
+\printbibliography[heading=subbibintoc,postnote=stepCounter,type=video,title={\thesubsection\quad Videos}]
+\printbibliography[heading=subbibintoc,postnote=stepCounter,nottype=book,nottype=incollection,nottype=article,nottype=online,nottype=video,title={\thesubsection\quad Andere}]
+\clearpage
 \section{Versicherung}
-Hiermit versichere ich, dass ich meine Facharbeit selbstständig
-angefertigt, keine anderen als die angegebenen Hilfsmittel benutzt und
-die Stellen der Facharbeit, die im Wortlaut oder im wesentlichen Inhalt
-aus anderen Werken übernommen wurden, mit genauer Quellenangabe
-kenntlich gemacht habe.
+Hiermit versichere ich, dass ich meine Facharbeit selbstständig angefertigt, keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Facharbeit, die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken übernommen wurden, mit genauer Quellenangabe kenntlich gemacht habe. 
 
-Mir ist bekannt, dass nicht ordnungsgemäße Quellenangaben und/ oder die
-Verwendung von nicht angegebenen Arbeiten oder Hilfsmitteln als
-Täuschungsversuch gewertet werden.
+Mir ist bekannt, dass nicht ordnungsgemäße Quellenangaben und/ oder die Verwendung von nicht angegebenen Arbeiten oder Hilfsmitteln als Täuschungsversuch gewertet werden.
 
 \doubleSignature{(Unterschrift)}{(Ort, Datum)}
 
 \section{Einverständniserklärung}
-Hiermit erkläre ich, dass ich damit einverstanden bin / nicht damit
-einverstanden bin (Nichtzutreffendes auslassen!), wenn die von mir
-verfasste Facharbeit gegebenenfalls der schulinternen Öffentlichkeit
-zugänglich gemacht wird.
+Hiermit erkläre ich, dass ich damit einverstanden bin / nicht damit einverstanden bin (Nichtzutreffendes auslassen!), wenn die von mir verfasste Facharbeit gegebenenfalls der schulinternen Öffentlichkeit zugänglich gemacht wird.
 
 \doubleSignature{(Unterschrift)}{(Ort, Datum)}
 

@@ -66,9 +66,9 @@ sorting=nyt,
 clearlang=true,
 backref=false,
 abbreviate=true,
-doi=true,
+doi=false,
 url=true,
-isbn=true,
+isbn=false,
 useauthor=true,
 usetranslator=true,
 maxcitenames=1,
@@ -80,7 +80,10 @@ date=year,
 ]{biblatex}
 \addbibresource{bibliography.bib}
 \DeclareDelimFormat[bib]{nametitledelim}{\addcolon\space}
+\DeclareNameAlias{author}{family-given}
+\renewcommand*{\multinamedelim}{\addsemicolon\addspace}
 \AtEveryBibitem{\clearfield{pagetotal}}
+
 
 
 % load titlesec to format the section titles
@@ -96,7 +99,7 @@ date=year,
 % load caption to format captions of figures, tables, etc
 \usepackage[]{caption}
 % load subcaption to be able to use subfigures, subtables, etc
-\usepackage{subcaption}
+\usepackage[]{subcaption}
 
 % load fancyhdr to format header and footer
 \usepackage{fancyhdr}
@@ -172,10 +175,26 @@ date=year,
   \end{minipage}
   }
 
+%%% commands needed to build school required titlepage
+
+\newcommand{\thetitle}{Deutsche Küche}
+\newcommand{\thesubject}{Futtern}
+\newcommand{\thelocation}{}
+\newcommand{\thedate}{\today}
+\newcommand{\theauthor}{Felsenkatze}
+\newcommand{\thefachbetreuer}{Fr.~Gulo Gulo}
+\newcommand{\theseminarlehrer}{Hr. Vielfraß}
+\newcommand{\theschool}{}
+
+%%%
+
 % include optional statements from yaml in the preamble
 
+% include optional statements in the preamble
+% this is the default variable and therefore used by filters like crossref
+
 \title{Deutsche Küche}
-\author{Felsenkatze\and}
+\author{Felsenkatze\and }
 \date{\today}
 
 \begin{document}
